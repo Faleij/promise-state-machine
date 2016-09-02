@@ -1,8 +1,6 @@
 # Promise State Machine ES6
 
-[![npm version](https://badge.fury.io/js/promise-state-machine-es6.svg)](http://badge.fury.io/js/promise-state-machine-es6)
-[![Code Climate](https://codeclimate.com/github/faleij/promise-state-machine/badges/gpa.svg)](https://codeclimate.com/github/faleij/promise-state-machine)
-[![Test Coverage](https://codeclimate.com/github/faleij/promise-state-machine/badges/coverage.svg)](https://codeclimate.com/github/faleij/promise-state-machine)
+[![NPM version][npm-image]][npm-url] [![NPM Downloads][downloads-image]][downloads-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![License][license-image]](LICENSE) [![Gratipay][gratipay-image]][gratipay-url]
 
 This is a rewritten version of [promise-state-machine](https://github.com/patbenatar/promise-state-machine) but with no dependencies; not bluebird - just native ES6, [DOT](https://en.wikipedia.org/wiki/DOT_(graph_description_language) data generation support for use with [Graphvis](http://www.graphviz.org/) or [vis.js](https://mdaines.github.io/viz.js/), to generate a visual representation of your state machine.
 
@@ -132,3 +130,18 @@ fsm.warn().then(() => {
 ## TODO
 
 - [ ] streamed version of toDOTsync
+
+# License
+MIT
+
+[npm-image]: http://img.shields.io/npm/v/promise-state-machine-es6.svg
+[npm-url]: https://npmjs.org/package/promise-state-machine-es6
+[downloads-image]: https://img.shields.io/npm/dm/promise-state-machine-es6.svg
+[downloads-url]: https://npmjs.org/package/promise-state-machine-es6
+[travis-image]: https://travis-ci.org/Faleij/promise-state-machine.svg?branch=master
+[travis-url]: https://travis-ci.org/Faleij/promise-state-machine
+[coveralls-image]: https://coveralls.io/repos/Faleij/promise-state-machine/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/Faleij/promise-state-machine?branch=master
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[gratipay-image]: https://img.shields.io/gratipay/faleij.svg
+[gratipay-url]: https://gratipay.com/faleij/
