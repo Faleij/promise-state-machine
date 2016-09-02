@@ -1,7 +1,7 @@
 {
-  "name": "promise-state-machine",
+  "name": "promise-state-machine-es6",
   "description": "An event-driven finite state machine backed by Promises",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "keywords": [
     "state machine",
     "finite state machine",
@@ -11,42 +11,34 @@
     "promise",
     "promises",
     "async",
-    "deferred"
+    "deferred",
+    "es6"
   ],
-  "homepage": "https://github.com/patbenatar/promise-state-machine",
+  "homepage": "https://github.com/faleij/promise-state-machine",
   "repository": {
     "type": "git",
-    "url": "git://github.com/patbenatar/promise-state-machine.git"
+    "url": "git://github.com/faleij/promise-state-machine.git"
   },
   "author": {
-    "name": "Nick Giancola",
-    "email": "nick@gophilosophie.com",
-    "url": "https://github.com/patbenatar"
+    "name": "Faleij",
+    "email": "faleij@gmail.com",
+    "url": "https://github.com/faleij"
   },
   "license": "MIT",
-  "main": "./lib/promise_state_machine.js",
+  "main": "./lib/PromiseStateMachine.js",
   "scripts": {
-    "test": "grunt test"
-  },
-  "dependencies": {
-    "bluebird": "^2.9.14",
-    "underscore": "^1.8.2"
+    "test": "eslint test lib && mocha test/lib/PromiseStateMachine.spec.js -t 6000 -b",
+    "cover": "istanbul cover -x *.spec.js node_modules/mocha/bin/_mocha -- -t 6000 -b -R spec test/lib/PromiseStateMachine.spec.js"
   },
   "devDependencies": {
-    "assertion-error": "^1.0.1",
-    "chai": "^1.10.0",
-    "chai-fuzzy": "^1.4.0",
-    "codeclimate-test-reporter": "0.0.4",
-    "eslint": "~0.14.1",
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-config-dir": "~0.3.2",
-    "grunt-eslint": "~6.0.0",
-    "grunt-mocha-cli": "~1.12.0",
-    "grunt-mocha-istanbul": "^2.3.1",
-    "istanbul": "^0.3.8",
-    "load-grunt-tasks": "~3.1.0",
-    "mocha": "~1.18.0",
-    "sinon": "~1.12.2"
+    "assertion-error": "1.0.2",
+    "eslint": "3.4.0",
+    "eslint-config-airbnb": "10.0.1",
+    "eslint-plugin-import": "1.14.0",
+    "eslint-plugin-jsx-a11y": "2.2.1",
+    "eslint-plugin-react": "6.2.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.0.2",
+    "sinon": "1.17.5"
   }
 }

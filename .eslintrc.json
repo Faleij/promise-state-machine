@@ -1,0 +1,26 @@
+{
+    "plugins": ["import"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "script"
+    },
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": [2, "single"],
+        "semi": ["error", "always"],
+        "no-undef": "warn",
+        "no-dupe-keys": "error",
+        "no-unused-vars": "warn",
+        "strict": ["error", "global"],
+        "no-underscore-dangle": 0,
+        "prefer-rest-params": 0,
+        "no-warning-comments": "warn",
+        "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 4 }],
+        "max-len": ["warn", 300]
+    },
+    "root": true
+}

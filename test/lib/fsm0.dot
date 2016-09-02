@@ -1,0 +1,10 @@
+digraph G {
+    rankdir=LR;
+
+    node [shape=doublecircle fixedsize=true width=1]; red;
+    node [shape=circle fixedsize=true width=1];
+
+    green -> yellow [label="warn"];
+    yellow -> red [label="panic"];
+    yellow -> green [label="clear"];
+}
