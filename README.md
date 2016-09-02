@@ -6,6 +6,11 @@
 
 This is a rewritten version of [promise-state-machine](https://github.com/patbenatar/promise-state-machine) but with no dependencies; not bluebird - just native ES6, [DOT](https://en.wikipedia.org/wiki/DOT_(graph_description_language) data generation support for use with [Graphvis](http://www.graphviz.org/) or [vis.js](https://mdaines.github.io/viz.js/), to generate a visual representation of your state machine.
 
+## Installation
+```
+npm install promise-state-machine-es6 --save
+```
+
 # Class PromiseStateMachine
 
 ## Constructor(options)
