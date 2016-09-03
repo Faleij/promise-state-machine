@@ -41,7 +41,7 @@ Synchronously create DOT file data as a string.
 
 ## # Events
 
-### [eventsKey] (from, to, ...rest)
+### `[eventsKey]` (from, to, ...rest)
 A transition event for each key of ``options.events`` passed to the constructor may be emitted when calling any method as defined by ``options.events``.
 
 ### transition (transitionKey, from, to, ...rest)
