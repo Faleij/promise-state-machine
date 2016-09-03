@@ -39,6 +39,14 @@ Synchronously create DOT file data as a string.
 ``data.to`` - To ``state``  
 ``data.transition`` - Transition key  
 
+## # Events
+
+### [eventsKey] (from, to, ...rest)
+A transition event for each key of ``options.events`` passed to the constructor may be emitted when calling any method as defined by ``options.events``.
+
+### transition (transitionKey, from, to, ...rest)
+This event is emitted before [transitionKey] event is emitted, returning a Promise that rejects will abort the transition and [eventsKey] event will not be emitted.
+
 # Examples
 
 ### Complete Example
@@ -53,15 +61,16 @@ const fsm = new PromiseStateMachine({
   }
 });
 
-fsm.on('warn', (from, to, anyArgs) => {
+fsm.on('warn', (from, to) => {
   return Promise.resolve('result 1');
 });
 
-fsm.on('warn', (from, to, anyArgs) => {
-  var transaction = anyArgs[0];
-  var somethingElse = anyArgs[1];
-
+fsm.on('warn', (from, to, transaction, somethingElse) => {
   return Promise.resolve('result 2');
+});
+
+fsm.on('transaction', (transition, from, to, ...rest) => {
+    transition; // => 'warn'
 });
 
 fsm.warn(transaction, somethingElse).then(function(results) {
@@ -73,7 +82,7 @@ fsm.warn(transaction, somethingElse).then(function(results) {
 
 fsm.is('green'); // => false
 fsm.is('yellow'); // => true
-fsm.state(); // => 'yellow'
+fsm.state; // => 'yellow'
 fsm.can('calm'); // => false
 fsm.can('panic'); // => true
 ```
@@ -127,7 +136,7 @@ fsm.warn().then(() => {
 });
 ```
 
-## TODO
+# TODO
 
 - [ ] streamed version of toDOTsync
 

@@ -33,6 +33,21 @@ describe('PromiseStateMachine', () => {
         });
     });
 
+    describe('should not be able to overwrite methods', () => {
+        it('throw error', () => {
+            return Promise.resolve()
+            .then(() => new PromiseStateMachine({
+                events: {
+                    is: { from: 'start', to: 'end'},
+                }
+            }))
+            .then(() => Promise.reject(new Error('Resolve not Expected')),
+            err => assert.equal(err.message, 'Illegal event name "is"; can\'t overwrite property'));
+
+        });
+    });
+
+
     describe('event action functions and handlers', () => {
         it('calls bound event handlers', (done) => {
             const fsm = buildFsm();
