@@ -20,18 +20,16 @@ npm install promise-state-machine-es6 --save
 
 Each key defined in ``options.events`` is defined as a method on the current instance. Use these methods to request a state transition. These methods returns a Promise that Resolves when transition succeded and Rejects when failed. To intercept a transition listen on the transition name, eg if ``options.events`` has "warn" transition we can intercept it by ``fsm.on('warn', (from, to, ...rest) => Promise.resolve())``. This event would get called when ``fsm.warn(...rest).then()`` is called.
 
-## is(state)
-Check if instance is in state.
-Returns: Bool.
+## is(...states) : Bool
+Check if instance is in any state. Argument may be one or many states or an array of states.
 
-## can(state)
-Check if instance can transition to a specific state.  
-Returns: Bool
+## can(...events) : Bool
+Check if instance can transition to a specific state. Argument may be one or many events or an array of events.
 
-## state [getter]
+## state [getter] : state
 Get current state
 
-## toDOTsync(options)
+## toDOTsync(options) : String
 Synchronously create DOT file data as a string.  
 ``options.replacer`` - Optional synchronous replacer function that takes a ``data`` object and returns a ``data`` object with all values stringified.  
 
@@ -41,10 +39,10 @@ Synchronously create DOT file data as a string.
 
 ## # Events
 
-### `[eventsKey]` (from, to, ...rest)
+### `[eventsKey]` (from, to, ...arguments)
 A transition event for each key of ``options.events`` passed to the constructor may be emitted when calling any method as defined by ``options.events``.
 
-### transition (transitionKey, from, to, ...rest)
+### transition (transitionKey, from, to, ...arguments)
 This event is emitted before [transitionKey] event is emitted, returning a Promise that rejects will abort the transition and [eventsKey] event will not be emitted.
 
 # Examples
